@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="retry_button_label">Try Again</string>
+    <string name="highscore_dialog_text">Your score: %1$d</string>
+    <string name="highscore_dialog_title">Game Over</string>
+    <string name="reset_dialog_title">Reset Quiz?</string>
+    <string name="reset_dialog_text">This action is permanent and can\'t be undone</string>
+    <string name="cancel_button_label">Cancel</string>
+    <string name="reset_button_label">Reset</string>
 </resources>

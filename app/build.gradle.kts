@@ -41,6 +41,21 @@ android {
 
 dependencies {
 
+
+    // ViewModel
+    implementation(libs.lifecycle.viewmodel.ktx)
+    // ViewModel utilities for Compose
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation(libs.androidx.lifecycle.runtime.ktx.v287)
+    // Lifecycle utilities for Compose
+    implementation(libs.lifecycle.runtime.compose)
+
+    // Saved state module for ViewModel
+    implementation(libs.lifecycle.viewmodel.savedstate)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
