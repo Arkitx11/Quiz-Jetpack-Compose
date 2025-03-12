@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+<<<<<<< HEAD
     <bytecodeTargetLevel target="21" />
+=======
+    <bytecodeTargetLevel>
+      <module name="Quiz.app" target="21" />
+    </bytecodeTargetLevel>
+>>>>>>> 5b4b543 (chore: add project configuration files)
   </component>
 </project>
