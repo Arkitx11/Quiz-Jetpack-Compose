@@ -1,5 +1,6 @@
 package com.example.quiz.ui
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import com.example.quiz.data.models.Question
 import com.example.quiz.data.repositories.questions
@@ -12,13 +13,15 @@ class QuizViewModel(
     questionsList: List<Question> = questions
 ) : ViewModel() {
     // Sanitized list containing only valid questions
-    val sanitizedQuestionsList: List<Question> = questionsList.filter {
+    @VisibleForTesting
+    internal val sanitizedQuestionsList: List<Question> = questionsList.filter {
         it.question.isNotBlank() &&
                 it.answer.isNotBlank() &&
                 it.options.isNotEmpty() &&
                 it.options.contains(it.answer)
     }
-    private val questionsCount = sanitizedQuestionsList.size
+    @VisibleForTesting
+    internal val questionsCount = sanitizedQuestionsList.size
     private val _uiState =
         MutableStateFlow(
             QuizScreenState(
