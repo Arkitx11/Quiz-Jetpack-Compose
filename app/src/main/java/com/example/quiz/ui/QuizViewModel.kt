@@ -9,9 +9,16 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class QuizViewModel(
-    private val questionsList: List<Question> = questions
+    questionsList: List<Question> = questions
 ) : ViewModel() {
-    private val questionsCount = questionsList.size
+    // Sanitized list containing only valid questions
+    val sanitizedQuestionsList: List<Question> = questionsList.filter {
+        it.question.isNotBlank() &&
+                it.answer.isNotBlank() &&
+                it.options.isNotEmpty() &&
+                it.options.contains(it.answer)
+    }
+    private val questionsCount = sanitizedQuestionsList.size
     private val _uiState =
         MutableStateFlow(
             QuizScreenState(
@@ -31,7 +38,7 @@ class QuizViewModel(
     private val progressIncrement = if (questionsCount > 0) 1f / questionsCount else 0f
 
     private fun initalizeState() {
-        val question = questionsList.first()
+        val question = sanitizedQuestionsList.first()
         _uiState.update {
             it.copy(
                 answer = question.answer,
@@ -65,7 +72,7 @@ class QuizViewModel(
                 )
             }
         else {
-            val currentIndexQuestion = questionsList[currentQuestionIndex]
+            val currentIndexQuestion = sanitizedQuestionsList[currentQuestionIndex]
             _uiState.update {
                 it.copy(
                     question = currentIndexQuestion.question,
