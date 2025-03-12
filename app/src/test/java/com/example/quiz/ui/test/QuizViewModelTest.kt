@@ -1,6 +1,7 @@
 package com.example.quiz.ui.test
 
 import com.example.quiz.data.repository.testQuestions
+import com.example.quiz.data.models.Question
 import com.example.quiz.ui.QuizViewModel
 import org.junit.Test
 import org.junit.Assert.*
@@ -73,5 +74,13 @@ class QuizViewModelTest {
         val updatedQuizState = viewModel.uiState.value
         assertTrue("Score Dialog pop up is shown", updatedQuizState.showScoreDialog)
     }
+
+    @Test
+    fun quizViewModel_emptyQuestionsListInstanitation() {
+        assertThrows(IllegalArgumentException::class.java) {
+            QuizViewModel(questionsList = listOf<Question>())
+        }
+    }
+
 
 }
