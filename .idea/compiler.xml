@@ -2,11 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <bytecodeTargetLevel target="21" />
 =======
     <bytecodeTargetLevel>
       <module name="Quiz.app" target="21" />
     </bytecodeTargetLevel>
 >>>>>>> 5b4b543 (chore: add project configuration files)
+=======
+    <bytecodeTargetLevel>
+      <module name="Quiz.app" target="21" />
+    </bytecodeTargetLevel>
+>>>>>>> origin/master
   </component>
 </project>
