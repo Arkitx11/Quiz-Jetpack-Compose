@@ -56,6 +56,7 @@ dependencies {
     // Saved state module for ViewModel
     implementation(libs.lifecycle.viewmodel.savedstate)
 
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
