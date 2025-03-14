@@ -3,6 +3,7 @@ package com.example.quiz.data.repositories
 import com.example.quiz.data.models.Question
 
 val questions: List<Question> = listOf(
+val flutterQuestionsList: List<Question> = listOf(
     Question(
         id = 1,
         question = "What is Flutter?",
